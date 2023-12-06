@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
 body{
     font-family: 'Dhurjati', sans-serif;
@@ -16,6 +17,10 @@ a{
     color: white;
     transition: transform .2s;
     font-size: 20px;
+}
+
+.navbar{
+    height: 60px;
 }
 
 .onActive{
@@ -36,7 +41,7 @@ a{
 }
 
 .card{
-    width: 18rem;
+    width: 13rem;
     margin-top: 20px;
     border: 0;
     text-align: center;
@@ -52,18 +57,88 @@ a{
     -webkit-box-orient: vertical;
   }
 
+  .progress{
+    background-color: transparent;
+    width: 100px;
+  }
+
 #cardContainer{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    column-gap: 40px;
 }
 
 #playbar{
     height: 70px;
     position: sticky;
     bottom: 0px;
+    overflow-y: hidden;
 }
 
 #playerImageSong{
     width: 70px;
+}
+
+.songsTitle{
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+
+#playButton{
+    width: 20px;
+}
+
+
+
+
+
+.play-pause {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+
+
+@media screen and (max-width: 375px) {
+    .card{
+        width: 8rem;
+    }
+    .progress{
+        width: 80px;
+      }
+    
+}
+
+
+@media screen and (min-width: 376px) {
+    .card{
+        width: 8rem;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .card{
+        width: 12rem;
+    }
+    
+}
+
+
+@media screen and (min-width: 1024px) {
+    .card{
+        width: 15rem;
+    }
+    
+}
+
+
+@media screen and (min-width: 1440px) {
+    .card{
+        width: 20rem;
+    }
+    
 }

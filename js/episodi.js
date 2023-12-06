@@ -51,7 +51,7 @@ function prendiEpisodi() {
           sourceAudio.src = episodio.playback_url;
           currentAudio = audio;
 
-          currentAudio.volume = 1;
+          currentAudio.volume = 0.5;
 
           currentAudio.play();
 
@@ -63,27 +63,38 @@ function prendiEpisodi() {
           songsTitle.innerText = episodio.title;
           songsArtist.innerText = "Fabrizio Pignatelli & Sara Smera";
 
-          // const playButtonPreview = document.getElementsByClassName("bi-play-circle")[0].parentElement;
-          // const pauseButtonPreview = document.getElementsByClassName("bi-pause-circle")[0].parentElement;
+          const playbar = document.getElementById("playbar");
+          playbar.classList.remove("d-none");
+          playbar.classList.add("d-block");
 
-          // playButtonPreview.removeEventListener("click", play);
-          // pauseButtonPreview.removeEventListener("click", pause);
+          const volumeRange = document.querySelector(".volume-range");
 
-          // playButtonPreview.addEventListener("click", play);
-          // pauseButtonPreview.addEventListener("click", pause);
+          volumeRange.addEventListener("input", function () {
+            currentAudio.volume = volumeRange.value / 100;
+          });
 
-          // function play() {
-          //   currentAudio.play();
-          //   playButtonPreview.classList.add("d-none");
-          //   pauseButtonPreview.classList.remove("d-none");
-          //   pauseButtonPreview.classList.add("d-block");
-          // }
+          const playButtonPreview = document.getElementById("playButton");
+          const pauseButtonPreview = document.getElementById("pauseButton");
 
-          // function pause() {
-          //   currentAudio.pause();
-          //   playButtonPreview.classList.remove("d-none");
-          //   pauseButtonPreview.classList.add("d-none");
-          // }
+          playButtonPreview.addEventListener("click", play);
+          pauseButtonPreview.addEventListener("click", pause);
+
+          playButtonPreview.classList.add("d-none");
+          pauseButtonPreview.classList.remove("d-none");
+          pauseButtonPreview.classList.add("d-block");
+
+          function play() {
+            currentAudio.play();
+            playButtonPreview.classList.add("d-none");
+            pauseButtonPreview.classList.remove("d-none");
+            pauseButtonPreview.classList.add("d-block");
+          }
+
+          function pause() {
+            currentAudio.pause();
+            playButtonPreview.classList.remove("d-none");
+            pauseButtonPreview.classList.add("d-none");
+          }
         }
       });
     });

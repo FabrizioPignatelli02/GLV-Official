@@ -13,12 +13,23 @@
     <link rel="stylesheet" href="../assets/css/index.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand bg-custom">
+    <nav class="navbar navbar-expand-md navbar-expand bg-custom position-sticky top-0 z-1">
       <div class="container-fluid">
         <a class="navbar-brand" href="../index.html"
           ><img src="../assets/img/GIÙ LA VISIERA logo (1).png" alt="logo Giù La Visiera" width="100"
         /></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav w-100 d-flex justify-content-around">
             <li class="nav-item">
               <a class="nav-link" href="../index.html">HOME</a>
@@ -34,48 +45,27 @@
       </div>
     </nav>
     <main>
-      <div class="container" id="cardContainer"></div>
+      <div class="container justify-content-center" id="cardContainer"></div>
     </main>
-    <footer id="playbar" class="bg-dark text-white position-sticky">
+    <footer id="playbar" class="bg-custom text-white position-sticky d-none">
       <div class="musicPlayer d-flex justify-content-between align-items-center">
         <div class="songsBar d-flex flex-row justify-content-start align-items-center">
-          <div class="songsInfo d-flex align-items-center">
+          <div class="songsInfo d-flex">
             <div class="songsImg">
               <img id="playerImageSong" src="" alt="" />
             </div>
             <div class="songsDescription ms-3">
-              <p class="songsTitle"></p>
-              <p class="songsArtist"></p>
+              <p class="songsTitle truncate"></p>
+              <p class="songsArtist d-none d-md-block"></p>
             </div>
-          </div>
-        </div>
-        <div class="progress-controller d-flex justify-content-center flex-column align-items-center">
-          <div class="control-buttons d-flex align-items-center">
-            <a href="#"><i class="bi bi-shuffle"></i></a>
-            <a href="#"><i class="bi bi-skip-start-circle"></i></a>
-            <a id="playButton" href="#"><i class="play-pause bi bi-play-circle"></i></a>
-            <a id="pauseButton" class="d-none" href="#"><i class="play-pause bi bi-pause-circle"></i></a>
-            <a href="#"><i class="bi bi-skip-end-circle"></i></a>
-            <a href="#"><i class="bi bi-repeat"></i></a>
-          </div>
-          <div class="progressContainer d-flex align-items-center justify-content-center">
-            <span id="currentTime"></span>
-            <div class="progressBar">
-              <div class="progress w-100 bg-dark">
-                <input id="timeRange" style="width: 100%; accent-color: lime"" type="range" min="0" max="100" />
-              </div>
-            </div>
-            <span id="songTimeAll"></span>
           </div>
         </div>
         <div class="otherFeatures d-flex flex-row justify-content-between">
-          <a href="#"><i class="bi bi-menu-button-wide"></i></a>
-          <div class="volumeBar d-flex align-items-center ps-3 pe-3">
-            <a href="#"><i class="bi bi-volume-up"></i></a>
-            <div class="progressBar">
-              <div class="progress bg-dark">
+          <div class="volumeBar d-flex align-items-center">
+            <div class="progressBar d-flex flex-column align-items-center">
+              <div class="progress">
                 <input
-                  style="width: 100%; accent-color: lime"
+                  style="width: 100%; accent-color: white"
                   id="player"
                   type="range"
                   min="0"
@@ -83,8 +73,13 @@
                   class="volume-range"
                 />
               </div>
+              <div>
+                <a id="playButton" class="d-none"><i class="play-pause bi bi-play-circle"></i></a>
+              </div>
+              <div>
+                <a id="pauseButton" class="d-block"><i class="play-pause bi bi-pause-circle"></i></a>
+              </div>
             </div>
-            <a href="#"><i class="bi bi-arrows-angle-expand"></i></a>
           </div>
         </div>
       </div>
