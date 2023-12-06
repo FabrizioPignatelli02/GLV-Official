@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&display=swap');
+
+body{
+    font-family: 'Dhurjati', sans-serif;
+}
+
+.bg-custom{
+    background-image: url(../img/base\ GLV.png);
+}
+
+a{
+    padding: 0;
+}
+
+.nav-link{
+    color: white;
+    transition: transform .2s;
+    font-size: 20px;
+}
+
+.onActive{
+    color: white;
+    transition: transform .2s;
+    transform: scale(1.5);
+    text-decoration: underline;
+}
+
+.onActive:hover{
+    color: white;
+    transform: scale(1.5);
+}
+
+.nav-link:hover{
+    color: white;
+    transform: scale(1.5);
+}
+
+.card{
+    width: 18rem;
+    margin-top: 20px;
+    border: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+#cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#playbar{
+    height: 70px;
+    position: sticky;
+    bottom: 0px;
+}
+
+#playerImageSong{
+    width: 70px;
+}

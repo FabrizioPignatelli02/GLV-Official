@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giù La Visiera</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand bg-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../index.html"
+          ><img src="../assets/img/GIÙ LA VISIERA logo (1).png" alt="logo Giù La Visiera" width="100"
+        /></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 d-flex justify-content-around">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link onActive" href="./episodi.html">EPISODI</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./chisiamo.html">CHI SIAMO</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="container" id="cardContainer"></div>
+    </main>
+    <footer id="playbar" class="bg-dark text-white position-sticky">
+      <div class="musicPlayer d-flex justify-content-between align-items-center">
+        <div class="songsBar d-flex flex-row justify-content-start align-items-center">
+          <div class="songsInfo d-flex align-items-center">
+            <div class="songsImg">
+              <img id="playerImageSong" src="" alt="" />
+            </div>
+            <div class="songsDescription ms-3">
+              <p class="songsTitle"></p>
+              <p class="songsArtist"></p>
+            </div>
+          </div>
+        </div>
+        <div class="progress-controller d-flex justify-content-center flex-column align-items-center">
+          <div class="control-buttons d-flex align-items-center">
+            <a href="#"><i class="bi bi-shuffle"></i></a>
+            <a href="#"><i class="bi bi-skip-start-circle"></i></a>
+            <a id="playButton" href="#"><i class="play-pause bi bi-play-circle"></i></a>
+            <a id="pauseButton" class="d-none" href="#"><i class="play-pause bi bi-pause-circle"></i></a>
+            <a href="#"><i class="bi bi-skip-end-circle"></i></a>
+            <a href="#"><i class="bi bi-repeat"></i></a>
+          </div>
+          <div class="progressContainer d-flex align-items-center justify-content-center">
+            <span id="currentTime"></span>
+            <div class="progressBar">
+              <div class="progress w-100 bg-dark">
+                <input id="timeRange" style="width: 100%; accent-color: lime"" type="range" min="0" max="100" />
+              </div>
+            </div>
+            <span id="songTimeAll"></span>
+          </div>
+        </div>
+        <div class="otherFeatures d-flex flex-row justify-content-between">
+          <a href="#"><i class="bi bi-menu-button-wide"></i></a>
+          <div class="volumeBar d-flex align-items-center ps-3 pe-3">
+            <a href="#"><i class="bi bi-volume-up"></i></a>
+            <div class="progressBar">
+              <div class="progress bg-dark">
+                <input
+                  style="width: 100%; accent-color: lime"
+                  id="player"
+                  type="range"
+                  min="0"
+                  max="100"
+                  class="volume-range"
+                />
+              </div>
+            </div>
+            <a href="#"><i class="bi bi-arrows-angle-expand"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/episodi.js"></script>
+  </body>
+</html>
