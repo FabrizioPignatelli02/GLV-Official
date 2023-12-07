@@ -66,6 +66,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     column-gap: 40px;
+    margin-top: 20px;
 }
 
 #playbar{
@@ -92,7 +93,6 @@ a{
 
 
 
-
 .play-pause {
     background-color: var(--primary-color);
     color: white;
@@ -109,6 +109,7 @@ a{
     .progress{
         width: 80px;
       }
+
     
 }
 
@@ -117,6 +118,7 @@ a{
     .card{
         width: 8rem;
     }
+
     
 }
 
@@ -124,6 +126,7 @@ a{
     .card{
         width: 12rem;
     }
+
     
 }
 
@@ -132,6 +135,7 @@ a{
     .card{
         width: 15rem;
     }
+
     
 }
 
@@ -140,5 +144,7 @@ a{
     .card{
         width: 20rem;
     }
+
+    
     
 }
