@@ -49,7 +49,7 @@
     </main>
     <footer id="playbar" class="bg-custom text-white position-sticky d-none">
       <div class="musicPlayer d-flex justify-content-between">
-        <div class="songsBar d-flex flex-row justify-content-start align-items-center">
+        <div class="songsBar">
           <div class="songsInfo d-flex">
             <div class="songsImg"><img id="playerImageSong" src="" alt="" /></div>
             <div class="songsDescription ms-3">
@@ -58,31 +58,17 @@
             </div>
           </div>
         </div>
-        <div class="progressBar d-flex">
-          <p class="currentTimeAudio">00:00</p>
-          <input style="width: 100%; accent-color: white" type="range" min="1" max="100" class="podcast-range" />
-          <p class="totalTimeAudio">00:00</p>
+        <div class="progressBar d-flex align-items-center gap-2">
+          <p class="totalTimeAudio text-center m-0">00:00</p>
+          <input type="range" min="1" max="100" class="podcast-range" />
+          <div>
+            <a id="playButton" class="d-none"><i class="play-pause bi bi-play-circle"></i></a>
+            <a id="pauseButton" class="d-block"><i class="play-pause bi bi-pause-circle"></i></a>
+          </div>
         </div>
-        <div class="d-flex flex-row justify-content-between">
-          <div class="volumeBar d-flex align-items-center">
-            <div class="progressBar d-flex flex-column align-items-center">
-              <div class="progress">
-                <input
-                  style="width: 100%; accent-color: white"
-                  id="player"
-                  type="range"
-                  min="0"
-                  max="100"
-                  class="volume-range"
-                />
-              </div>
-              <div>
-                <a id="playButton" class="d-none"><i class="play-pause bi bi-play-circle"></i></a>
-              </div>
-              <div>
-                <a id="pauseButton" class="d-block"><i class="play-pause bi bi-pause-circle"></i></a>
-              </div>
-            </div>
+        <div class="d-flex flex-row justify-content-between align-items-center">
+          <div class="volumeBar">
+            <input id="player" type="range" min="0" max="100" class="volume-range" />
           </div>
         </div>
       </div>
