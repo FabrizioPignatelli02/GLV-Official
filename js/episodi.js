@@ -38,6 +38,10 @@ function prendiEpisodi() {
             currentAudio.pause();
             currentAudio.remove();
           }
+
+          const podcastRange = document.querySelector(".podcast-range");
+
+          podcastRange.value = 0;
           const audio = document.createElement("audio");
 
           audio.src = episodio.playback_url;
@@ -68,7 +72,7 @@ function prendiEpisodi() {
           const totalTimeAudio = document.querySelector(".totalTimeAudio");
 
           let durationMinute = Math.floor(episodio.duration / 1000 / 60);
-          let durationSecond = Math.floor(episodio.duration / 1000 - durationMinute * 60);
+          let durationSecond = Math.floor((episodio.duration / 1000) % 60);
           if (durationSecond < 10) {
             durationSecond = "0" + durationSecond;
           }
@@ -78,19 +82,14 @@ function prendiEpisodi() {
           totalTimeAudio.innerText = durationMinute + ":" + durationSecond;
           console.log("Totale:", episodio.duration);
 
-          const podcastRange = document.querySelector(".podcast-range");
-
-          podcastRange.value = 0;
-
-          podcastRange.addEventListener("input", function () {
+          podcastRange.addEventListener("change", function () {
             const currentTimeAudio = document.querySelector(".currentTimeAudio");
             let actualTime = currentAudio.duration * (podcastRange.value / 100);
             currentAudio.currentTime = actualTime;
             console.log("Actual:", actualTime);
+            podcastRange.value = (actualTime / currentAudio.duration) * 100;
             let minutes = Math.floor(actualTime / 60);
-            let seconds = Math.floor((actualTime / 1000) % 60);
-            console.log("minutes:", minutes);
-            console.log("seconds:", seconds);
+            let seconds = Math.floor(actualTime % 60);
             if (minutes < 10) {
               minutes = "0" + minutes;
             }
@@ -99,6 +98,25 @@ function prendiEpisodi() {
             }
             currentTimeAudio.innerText = minutes + ":" + seconds;
           });
+
+          setInterval(() => {
+            const currentTimeAudio = document.querySelector(".currentTimeAudio");
+            podcastRange.value = (currentAudio.currentTime / currentAudio.duration) * 100;
+            console.log("Dove sono:", podcastRange.value);
+            let minutes = Math.floor(currentAudio.currentTime / 60);
+            let seconds = Math.floor(currentAudio.currentTime % 60);
+            if (minutes < 10) {
+              minutes = "0" + minutes;
+            }
+            if (seconds < 10) {
+              seconds = "0" + seconds;
+            }
+            currentTimeAudio.innerText = minutes + ":" + seconds;
+          }, 1000);
+
+          positionPodcastRange = 0;
+          positionPodcastRange = (currentAudio.currentTime * 100) / currentAudio.duration;
+          podcastRange.value = positionPodcastRange;
 
           const playButtonPreview = document.getElementById("playButton");
           const pauseButtonPreview = document.getElementById("pauseButton");

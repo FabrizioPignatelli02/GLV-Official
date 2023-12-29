@@ -50,7 +50,7 @@
     <footer id="playbar" class="bg-custom text-white position-sticky d-none">
       <div class="musicPlayer d-flex justify-content-between">
         <div class="songsBar">
-          <div class="songsInfo d-flex">
+          <div class="songsInfo d-flex align-items-center">
             <div class="songsImg"><img id="playerImageSong" src="" alt="" /></div>
             <div class="songsDescription ms-3">
               <p class="songsTitle truncate"></p>
@@ -59,8 +59,9 @@
           </div>
         </div>
         <div class="progressBar d-flex align-items-center gap-2">
+          <p class="currentTimeAudio text-center m-0">00:00</p>
+          <input type="range" value="0" class="podcast-range" />
           <p class="totalTimeAudio text-center m-0">00:00</p>
-          <input type="range" min="1" max="100" class="podcast-range" />
           <div>
             <a id="playButton" class="d-none"><i class="play-pause bi bi-play-circle"></i></a>
             <a id="pauseButton" class="d-block"><i class="play-pause bi bi-pause-circle"></i></a>
