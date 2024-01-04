@@ -21,6 +21,7 @@ a{
 
 .navbar{
     height: 60px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.281); */
 }
 
 .onActive{
@@ -47,6 +48,7 @@ a{
     cursor: pointer;
     box-shadow: 10px 5px 10px 0px grey;
 }
+
 
 .truncate {
     overflow: hidden;
@@ -148,7 +150,21 @@ a{
     background-color: red;
 }
 
+.button-style{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+}
 
+
+
+.button-style:hover,
+.button-style:focus {
+  background-color: white;
+  transition: 0.40s;
+}
 
 
 .play-pause {
@@ -160,6 +176,66 @@ a{
 
   #playerImageSong{  
     width: 100px;
+  }
+
+  #ultimoEpisodio img{
+    height: 350px;
+    object-fit: contain;
+  }
+
+  #lastEpisodeInfo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    gap: 20px;
+    font-size: 25px;
+  }
+
+
+  #lastEpisodeInfo p{
+    text-decoration: underline;
+  }
+
+  #ultimoEpisodio{
+    width: 100%;
+    height: 500px;
+    background-image: url("../img/base\ GLV.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+  #subtitle{
+    background-color: orange;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  hr{
+    margin: 0;
+  }
+
+  .homeParagraph{
+    margin-top: 60px;
+    font-size: 50px;
+  }
+
+  #mainDivHome{
+    margin-inline: auto;
+    width: 85%;
+  }
+
+
+  #episodiRecenti{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
 
