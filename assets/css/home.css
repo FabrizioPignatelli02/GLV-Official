@@ -12,6 +12,20 @@
 }
 
 
+.presentatori img{
+    height: 500px;
+    object-fit: cover;
+    }
+
+
+
+#discord{
+    background-image: url(../img/sfondo\ discord\ glv.jpg);
+    width: 100%;
+    height: 400px;
+}
+
+
 
 
 
