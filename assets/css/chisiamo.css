@@ -29,6 +29,24 @@
 }
 
 
+#presentatori img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: orange;
+}
+
+#presentatori{
+    gap: 200px;
+}
+
+
+.bi{
+    color: black;
+}
 
 
 @media screen and (max-width: 425px) {
@@ -51,6 +69,15 @@
 
     .siti > a > img{
         width: 75px;
+    }
+
+    #presentatori img{
+        width: 200px;
+        height: 200px;
+    }
+
+    #presentatori{
+        gap: 100px;
     }
     
 }
