@@ -7,6 +7,8 @@ body{
 
 .bg-custom{
     background-image: url(../img/base\ GLV.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a{
@@ -202,6 +204,8 @@ a{
     width: 100%;
     height: 500px;
     background-image: url("../img/base\ GLV.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -240,6 +244,12 @@ a{
 
   .logo{
     width: 100px;
+  }
+
+  footer{
+    background-image: url(../img/base\ GLV.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 
